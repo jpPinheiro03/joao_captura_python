@@ -27,7 +27,7 @@ while not fim:
     cpuPercent = ps.cpu_percent(interval=1)
     horas = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     memory = ps.virtual_memory().percent
-    diskUse = ps.disk_usage('C:\\').percent
+    diskUse = ps.disk_usage('/').percent
 
     for p in ps.process_iter(attrs=['pid', 'name', 'status']):
         if p.info['status'] == ps.STATUS_RUNNING:
